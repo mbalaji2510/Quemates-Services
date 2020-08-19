@@ -1,10 +1,10 @@
-package com.quemates;
+package com.quematesuserprofleapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class QuematesApplicationTests {
+class QuematesUserprofleapiApplicationTests {
 
 	@Test
 	void contextLoads() {

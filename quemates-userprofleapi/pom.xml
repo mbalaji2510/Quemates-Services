@@ -8,10 +8,10 @@
 		<version>2.3.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.quemates</groupId>
-	<artifactId>Quemates</artifactId>
+	<groupId>com.quematesuserprofileapi</groupId>
+	<artifactId>quemates-userprofleapi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Quemates</name>
+	<name>quemates-userprofleapi</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -27,7 +27,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.11</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
