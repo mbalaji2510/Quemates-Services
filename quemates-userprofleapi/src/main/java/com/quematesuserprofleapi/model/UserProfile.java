@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class UserProfile {
 	
 	@Id
-	@GeneratedValue(strategy =GenerationType.AUTO )
+	@GeneratedValue(strategy =GenerationType.IDENTITY )
 	private Long id;
 	private Date createdAt;
 	private Date updatedAt;
