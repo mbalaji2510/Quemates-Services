@@ -36,9 +36,14 @@ public class UserProfileController {
 
 	@RequestMapping("/usr/{id}")
 	public UserProfile getUserProfileById(@PathVariable("id") Long id){
-		UserProfile profile = profileService.getProfileByUserId(id);
+		UserProfile profile = profileService.getProfileById(id);
 		return profile;
 	}
 
 	
+	@RequestMapping("/usr/{userid}/profile")
+	public UserProfile getUserProfileByUsrid(@PathVariable("userid") Long userid){
+		UserProfile profile = profileService.getUserProfileByUsrid(userid);
+		return profile;
+	}
 }

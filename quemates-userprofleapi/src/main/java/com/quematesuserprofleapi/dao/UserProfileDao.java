@@ -10,6 +10,7 @@ List<UserProfile> getAllProfiles();
 	
 	void CreateUsrProfile(UserProfile userProfile);
 	
-	UserProfile getProfileByUserId(Long userId);
+	UserProfile getProfileById(Long id);
+	UserProfile getUserProfileByUsrid(Long userid);
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
@@ -33,10 +34,21 @@ public class UserProfileDaoImpl implements UserProfileDao {
 	}
 
 	@Override
-	public UserProfile getProfileByUserId(Long id) {
+	public UserProfile getProfileById(Long id) {
 		// TODO Auto-generated method stub
 		UserProfile userProfile = em.find(UserProfile.class, id);
 		return userProfile;
+	}
+
+	@Override
+	public UserProfile getUserProfileByUsrid(Long userid) {
+		TypedQuery<UserProfile> query = em.createQuery(
+				  "SELECT u FROM UserProfile u WHERE u.user.userid = :userid" , UserProfile.class);
+		System.out.println("query executed successfully");
+		UserProfile profile = query.setParameter("userid", userid).getSingleResult();
+		
+		return profile;
+
 	}
 
 }

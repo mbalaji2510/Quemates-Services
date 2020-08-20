@@ -32,9 +32,15 @@ public class UserProfileServiceImpl implements UserProfileService {
 	}
 
 	@Override
-	public UserProfile getProfileByUserId(Long userId) {
+	public UserProfile getProfileById(Long id) {
 		// TODO Auto-generated method stub
-		return userProfileDao.getProfileByUserId(userId);
+		return userProfileDao.getProfileById(id);
+	}
+
+	@Override
+	public UserProfile getUserProfileByUsrid(Long userid) {
+		// TODO Auto-generated method stub
+		return userProfileDao.getUserProfileByUsrid(userid);
 	}
 
 }
