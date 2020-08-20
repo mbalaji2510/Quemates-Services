@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.quematesuserprofleapi.model.User;
 import com.quematesuserprofleapi.model.UserProfile;
 import com.quematesuserprofleapi.service.UserProfileService;
 
@@ -42,8 +44,20 @@ public class UserProfileController {
 
 	
 	@RequestMapping("/usr/{userid}/profile")
+	@HystrixCommand(fallbackMethod = "userDefinedMethod")
 	public UserProfile getUserProfileByUsrid(@PathVariable("userid") Long userid){
 		UserProfile profile = profileService.getUserProfileByUsrid(userid);
 		return profile;
+	}
+	
+	public UserProfile userDefinedMethod(Long userid) {
+		String message="particular user id not register, so userprofile data is not avaialable";
+		UserProfile profile = new UserProfile();
+		profile.setId(1L);
+		profile.setAbout("default");
+		profile.setGeneder("default");
+		profile.setUser(new User(1L,"default","default","default", "default"));
+		return profile;
+		
 	}
 }
